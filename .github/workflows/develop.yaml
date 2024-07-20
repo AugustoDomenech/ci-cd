@@ -20,3 +20,12 @@ jobs:
 
       - name: Build project
         run: mvn clean package
+
+      - name: Docker Login
+        run: docker login -u ${{secrets.DOCKER_USER}} -p ${{secrets.DOCKER_SECRET}}
+
+      - name: Build Docker image
+        run: docker build -f src/main/docker/Dockerfile -t quarkus .
+
+      - name: Push Image Docker
+        run: docker push augustodomenech/quarkus
