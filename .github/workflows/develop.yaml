@@ -42,4 +42,4 @@ jobs:
         run: docker pull augustodomenech/quarkus:latest
 
       - name: Run Docker Container
-        run: docker run -d -p 8080:8080 -name quarkus_gh_actions augustodomenech/quarkus
+        run: docker run -d -p 8080:8080 --name quarkus_gh_actions augustodomenech/quarkus
