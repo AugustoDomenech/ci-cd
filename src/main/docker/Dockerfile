@@ -6,4 +6,6 @@ COPY target/quarkus-app/ /usr/src/app
 
 WORKDIR /usr/src/app
 
+EXPOSE 8080
+
 CMD ["java", "-jar", "quarkus-run.jar"]
